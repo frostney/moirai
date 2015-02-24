@@ -1,0 +1,7 @@
+{
+	"loopfunc": true,
+	"sub": true,
+	"eqnull": true,
+	"expr": true,
+    "esnext": true
+}
