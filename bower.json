@@ -15,5 +15,8 @@
   ],
   "dependencies": {
     "react": "~0.12.2"
+  },
+  "devDependencies": {
+    "almond": "~0.3.0"
   }
 }
