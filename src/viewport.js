@@ -8,11 +8,15 @@ var Viewport = React.createClass({
     }
   },
   render: function() {
-    var width = 'width: ' + ((this.props.width === 'auto') ? '100%' : this.props.width + 'px');
-    var height = 'height: ' + ((this.props.height === 'auto') ? '100%' : this.props.height + 'px');
+    var width = (this.props.width === 'auto') ? '100%' : this.props.width + 'px';
+    var height = (this.props.height === 'auto') ? '100%' : this.props.height + 'px';
 
+    var style = {width, height};
+    
     return (
-      <div className="viwport" style="{width}; {height}"></div>
+      <div className="viewport" style={style}>
+        {this.props.children}
+      </div>
     );
   }
 });
