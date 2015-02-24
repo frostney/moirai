@@ -1,0 +1,24 @@
+{
+  "name": "moirai",
+  "version": "0.1.0",
+  "description": "React.js game engine. Exciting, experimental and unstable",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "npm run grunt test",
+    "grunt": "grunt",
+    "bower": "bower"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/freezedev/moirai.git"
+  },
+  "author": "",
+  "license": "Public domain",
+  "bugs": {
+    "url": "https://github.com/freezedev/moirai/issues"
+  },
+  "homepage": "https://github.com/freezedev/moirai"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "moirai",
+  "version": "0.1.0",
+  "homepage": "https://github.com/freezedev/moirai",
+  "authors": [
+    "Johannes Stein <johannesstein@freeze-dev.com>"
+  ],
+  "license": "Public domain",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
