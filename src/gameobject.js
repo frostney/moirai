@@ -4,7 +4,7 @@ var GameObject = React.createClass({
   render: function() {
     
     return (
-      <div class="gameobject">
+      <div className="gameobject">
 				{this.props.children}
       </div>
     );
