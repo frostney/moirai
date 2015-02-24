@@ -1,5 +1,10 @@
 import React from 'react';
 
+import Viewport from 'moirai/viewport';
+import SceneDirector from 'moirai/scenedirector'
+import Scene from 'moirai/scene';
+import GameObject from 'moirai/gameobject';
+
 var Game = React.createClass({
   render: function() {
     return (
