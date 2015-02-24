@@ -20,5 +20,10 @@
   "bugs": {
     "url": "https://github.com/freezedev/moirai/issues"
   },
-  "homepage": "https://github.com/freezedev/moirai"
+  "homepage": "https://github.com/freezedev/moirai",
+  "devDependencies": {
+    "bower": "^1.3.12",
+    "grunt": "^0.4.5",
+    "grunt-babel": "^4.0.0"
+  }
 }
