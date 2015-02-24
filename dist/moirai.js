@@ -64,11 +64,27 @@ define('moirai/gameobject', ["exports", "module", "react"], function (exports, m
   var GameObject = React.createClass({
     displayName: "GameObject",
 
+    getInitialProps: function getInitialProps() {
+      return {
+        position: "0,0"
+      };
+    },
     render: function render() {
+      var position = "absolute";
+
+      var pos = this.props.position;
+      if (typeof pos === "string") {
+        pos = pos.split(",");
+      }
+
+      var left = pos[0] + "px";
+      var top = pos[1] + "px";
+
+      var style = { position: position, left: left, top: top };
 
       return React.createElement(
         "div",
-        { className: "gameobject" },
+        { className: "gameobject", style: style },
         this.props.children
       );
     }
