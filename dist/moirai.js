@@ -227,13 +227,39 @@ define('moirai/viewport', ["exports", "module", "react"], function (exports, mod
 
   var React = _interopRequire(_react);
 
+  var scaleHeightToFit = function scaleHeightToFit() {
+    var scaleFactor = 1;
+    var height = parseInt(this.props.height, 10);
+
+    console.log("height", height);
+
+    if (height > this.state.containerHeight) {
+      scaleFactor = this.state.containerHeight / height;
+    }
+
+    console.log("scaleFactor", scaleFactor);
+
+    return scaleFactor;
+  };
+
+  var scaleWidthToFit = function scaleWidthToFit() {
+    var scaleFactor = 1;
+    var width = parseInt(this.props.width, 10);
+
+    if (width > this.state.containerWidth) {
+      scaleFactor = this.state.containerHeight / width;
+    }
+
+    return scaleFactor;
+  };
+
   var Viewport = (function (_React$Component) {
     function Viewport() {
       _classCallCheck(this, Viewport);
 
       this.state = {
-        windowWidth: 0,
-        windowHeight: 0
+        containerWidth: 0,
+        containerHeight: 0
       };
 
       this.updateDimensions = this.updateDimensions.bind(this);
@@ -242,7 +268,9 @@ define('moirai/viewport', ["exports", "module", "react"], function (exports, mod
     _inherits(Viewport, _React$Component);
 
     Viewport.prototype.updateDimensions = function updateDimensions() {
-      this.setState({ width: window.innerWidth, height: window.innerHeight });
+      this.setState({ containerWidth: window.innerWidth, containerHeight: window.innerHeight });
+
+      console.log(this.state);
     };
 
     Viewport.prototype.componentWillMount = function componentWillMount() {
@@ -260,9 +288,50 @@ define('moirai/viewport', ["exports", "module", "react"], function (exports, mod
     Viewport.prototype.render = function render() {
       var width = this.props.width === "auto" ? "100%" : this.props.width + "px";
       var height = this.props.height === "auto" ? "100%" : this.props.height + "px";
-      var transform = "scale(1.0, 1.0)";
 
-      var style = { width: width, height: height, transform: transform };
+      var autoSize = this.props.width === "auto" && this.props.height === "auto";
+
+      var scaleFactor = 1;
+
+      if (!autoSize) {
+        console.log("No auto size");
+
+        switch (this.props.mode) {
+          case "scaleToFit":
+            {
+              scaleFactor = Math.min(scaleWidthToFit.call(this), scaleHeightToFit.call(this));
+
+              console.log("scaleFactor", scaleFactor);
+
+              break;
+            }
+          case "scaleWidthToFit":
+            {
+              scaleFactor = scaleWidthToFit.call(this);
+              break;
+            }
+          case "scaleHeightToFit":
+            {
+              scaleFactor = scaleHeightToFit.call(this);
+              break;
+            }
+          default:
+            break;
+        }
+      }
+
+      var transform = "scale(" + scaleFactor + ", " + scaleFactor + ")";
+
+      var position = "absolute";
+
+      var style = { position: position, width: width, height: height, transform: transform };
+
+      if (!autoSize && this.props.center) {
+        style.left = "50%";
+        style.top = "50%";
+        style.marginLeft = this.props.width / -2 + "px";
+        style.marginTop = this.props.height / -2 + "px";
+      }
 
       return React.createElement(
         "div",
@@ -277,7 +346,8 @@ define('moirai/viewport', ["exports", "module", "react"], function (exports, mod
   Viewport.defaultProps = {
     width: "auto",
     height: "auto",
-    mode: "fit"
+    mode: "scaleToFit",
+    center: true
   };
 
   module.exports = Viewport;
