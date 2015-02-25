@@ -1,7 +1,7 @@
 import React from 'react';
 
-var SceneDirector = React.createClass({
-  render: function() {
+class SceneDirector extends React.Component {
+  render() {
     var style = {
       width: '100%',
       height: '100%'
@@ -13,6 +13,6 @@ var SceneDirector = React.createClass({
       </div>
     );
   }
-});
+}
 
 export default SceneDirector;
