@@ -1,13 +1,7 @@
 import React from 'react';
 
-var Viewport = React.createClass({
-  getInitialProps: function() {
-    return {
-      width: 'auto',
-      height: 'auto'
-    }
-  },
-  render: function() {
+class Viewport extends React.Component {
+  render() {
     var width = (this.props.width === 'auto') ? '100%' : this.props.width + 'px';
     var height = (this.props.height === 'auto') ? '100%' : this.props.height + 'px';
     var transform = 'scale(1.0, 1.0)';
@@ -20,7 +14,13 @@ var Viewport = React.createClass({
       </div>
     );
   }
-});
+}
+
+Viewport.defaultProps = {
+  width: 'auto',
+  height: 'auto',
+  mode: 'fit'
+};
 
 /*
  var WindowDimensions = React.createClass({
