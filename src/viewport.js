@@ -3,19 +3,25 @@ import React from 'react';
 
 var scaleHeightToFit = function() {
   var scaleFactor = 1.0;
-
-  if (this.props.height > this.state.containerHeight) {
-    scaleFactor = this.state.containerHeight / this.props.height;
+  var height = parseInt(this.props.height, 10);
+  
+  console.log('height', height);
+  
+  if (height > this.state.containerHeight) {
+    scaleFactor = this.state.containerHeight / height;
   }
+  
+  console.log('scaleFactor', scaleFactor);
 
   return scaleFactor;
 };
 
 var scaleWidthToFit = function() {
   var scaleFactor = 1.0;
+  var width = parseInt(this.props.width, 10);
 
-  if (this.props.width > this.state.containerWidth) {
-    scaleFactor = this.state.containerHeight / this.props.width;
+  if (width > this.state.containerWidth) {
+    scaleFactor = this.state.containerHeight / width;
   }
 
   return scaleFactor;
@@ -33,6 +39,8 @@ class Viewport extends React.Component {
 
   updateDimensions() {
     this.setState({containerWidth: window.innerWidth, containerHeight: window.innerHeight});
+    
+    console.log(this.state);
   }
 
   componentWillMount() {
@@ -56,20 +64,13 @@ class Viewport extends React.Component {
     var scaleFactor = 1.0;
     
     if (!autoSize) {
+      console.log('No auto size');
+      
       switch (this.props.mode) {
         case 'scaleToFit': {
-          let scaleX = 1;
-          let scaleY = 1;
-
-          if (this.state.containerWidth < this.props.width) {
-            scaleY = scaleHeightToFit.call(this);
-          }
-
-          if (this.state.containerHeight < this.props.height) {
-            scaleX = scaleWidthToFit.call(this);
-          }
-
-          scaleFactor = Math.min(scaleX, scaleY);
+          scaleFactor = Math.min(scaleWidthToFit.call(this), scaleHeightToFit.call(this));
+          
+          console.log('scaleFactor', scaleFactor);
           
           break;
         }
