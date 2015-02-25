@@ -5,8 +5,8 @@ import SceneDirector from 'moirai/scenedirector'
 import Scene from 'moirai/scene';
 import GameObject from 'moirai/gameobject';
 
-var Game = React.createClass({
-  render: function() {
+class Game extends React.Component {
+  render() {
     return (
       <Viewport width="auto" height="auto">
         <SceneDirector>
@@ -17,6 +17,6 @@ var Game = React.createClass({
       </Viewport>
     );
   }
-});
+}
 
 React.render(<Game />, document.body);
