@@ -1,9 +1,9 @@
 import React from 'react';
 
-var Behavior = React.createClass({
-  render: function() {
+class Behavior extends React.Component {
+  render() {
     return null;
   }
-});
+}
 
 export default Behavior;
