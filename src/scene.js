@@ -2,8 +2,13 @@ import React from 'react';
 
 var Scene = React.createClass({
   render: function () {
+    var style = {
+      width: '100%',
+      height: '100%'
+    };
+    
     return (
-      <div className="scene">
+      <div className="scene" style={style}>
 				{this.props.children}
       </div>
     );
