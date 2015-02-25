@@ -1,7 +1,7 @@
 import React from 'react';
 
-var Scene = React.createClass({
-  render: function () {
+class Scene extends React.Component {
+  render() {
     var style = {
       width: '100%',
       height: '100%'
@@ -13,6 +13,6 @@ var Scene = React.createClass({
       </div>
     );
   }
-});
+}
 
 export default Scene;
