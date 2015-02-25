@@ -1,12 +1,7 @@
 import React from 'react';
 
-var GameObject = React.createClass({
-  getInitialProps: function() {
-    return {
-      position: '0,0'
-    }
-  },
-  render: function() {
+class GameObject extends React.Component {
+  render() {
     var position = 'absolute';
     
     var pos = this.props.position;
@@ -25,6 +20,10 @@ var GameObject = React.createClass({
       </div>
     );
   }
-});
+}
+
+GameObject.defaultProps = {
+  position: '0,0'
+};
 
 export default GameObject;
