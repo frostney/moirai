@@ -104,9 +104,14 @@ define('moirai/scene', ["exports", "module", "react"], function (exports, module
     displayName: "Scene",
 
     render: function render() {
+      var style = {
+        width: "100%",
+        height: "100%"
+      };
+
       return React.createElement(
         "div",
-        { className: "scene" },
+        { className: "scene", style: style },
         this.props.children
       );
     }
@@ -126,9 +131,14 @@ define('moirai/scenedirector', ["exports", "module", "react"], function (exports
     displayName: "SceneDirector",
 
     render: function render() {
+      var style = {
+        width: "100%",
+        height: "100%"
+      };
+
       return React.createElement(
         "div",
-        { className: "scene-director" },
+        { className: "scene-director", style: style },
         this.props.children
       );
     }
@@ -156,8 +166,9 @@ define('moirai/viewport', ["exports", "module", "react"], function (exports, mod
     render: function render() {
       var width = this.props.width === "auto" ? "100%" : this.props.width + "px";
       var height = this.props.height === "auto" ? "100%" : this.props.height + "px";
+      var transform = "scale(1.0, 1.0)";
 
-      var style = { width: width, height: height };
+      var style = { width: width, height: height, transform: transform };
 
       return React.createElement(
         "div",
