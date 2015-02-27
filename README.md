@@ -5,6 +5,7 @@ React.js game engine. Exciting, experimental and unstable
 
 ## Philosophy
 - Thin layer on top of React.js
+- DOM elements right now
 
 ## License
 Public domain (UNLICENSE). If that does not work for you, you are allowed to license it under the terms of the MIT license.
