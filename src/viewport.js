@@ -3,9 +3,7 @@ import React from 'react';
 
 var scaleHeightToFit = function() {
   var scaleFactor = 1.0;
-  var height = parseInt(this.props.height, 10);
-  
-  console.log('height', height);
+  var height = this.props.height;
   
   if (height > this.state.containerHeight) {
     scaleFactor = this.state.containerHeight / height;
@@ -18,7 +16,7 @@ var scaleHeightToFit = function() {
 
 var scaleWidthToFit = function() {
   var scaleFactor = 1.0;
-  var width = parseInt(this.props.width, 10);
+  var width = this.props.width;
 
   if (width > this.state.containerWidth) {
     scaleFactor = this.state.containerHeight / width;
@@ -56,36 +54,36 @@ class Viewport extends React.Component {
   }
 
   render() {
-    var width = (this.props.width === 'auto') ? '100%' : this.props.width + 'px';
-    var height = (this.props.height === 'auto') ? '100%' : this.props.height + 'px';
+    var autoSize = false;
     
-    var autoSize = (this.props.width === 'auto') && (this.props.height === 'auto');
+    switch (this.props.mode) {
+      case 'scaleToFit': {
+        scaleFactor = Math.min(scaleWidthToFit.call(this), scaleHeightToFit.call(this));
+        break;
+      }
+      case 'scaleWidthToFit': {
+        scaleFactor = scaleWidthToFit.call(this);
+        break;
+      }
+      case 'scaleHeightToFit': {
+        scaleFactor = scaleHeightToFit.call(this);
+        break;
+      }
+      case 'fill':
+        autoSize = true;
+      default:
+        break;
+    }
+    
+    var width = this.props.width + 'px';
+    var height = this.props.height + 'px';
+    
+    if (autoSize) {
+      width = '100%';
+      height = '100%';
+    }
     
     var scaleFactor = 1.0;
-    
-    if (!autoSize) {
-      console.log('No auto size');
-      
-      switch (this.props.mode) {
-        case 'scaleToFit': {
-          scaleFactor = Math.min(scaleWidthToFit.call(this), scaleHeightToFit.call(this));
-          
-          console.log('scaleFactor', scaleFactor);
-          
-          break;
-        }
-        case 'scaleWidthToFit': {
-          scaleFactor = scaleWidthToFit.call(this);
-          break;
-        }
-        case 'scaleHeightToFit': {
-          scaleFactor = scaleHeightToFit.call(this);
-          break;
-        }
-        default:
-          break;
-      }
-    }
     
     var transform = `scale(${scaleFactor}, ${scaleFactor})`;
 
@@ -109,10 +107,17 @@ class Viewport extends React.Component {
 }
 
 Viewport.defaultProps = {
-  width: 'auto',
-  height: 'auto',
+  width: 800,
+  height: 480,
   mode: 'scaleToFit',
   center: true
+};
+
+Viewport.propTypes = {
+  width: React.PropTypes.number,
+  height: React.PropTypes.number,
+  mode: React.PropTypes.string,
+  center: React.PropTypes.bool
 };
 
 export default Viewport;

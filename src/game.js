@@ -8,7 +8,7 @@ import GameObject from 'moirai/gameobject';
 class Game extends React.Component {
   render() {
     return (
-      <Viewport width="auto" height="auto">
+      <Viewport>
         <SceneDirector>
           <Scene>
             <GameObject type="image" asset="hero.png" position="10, 10" />
