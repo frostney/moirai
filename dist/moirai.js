@@ -295,8 +295,6 @@ define('moirai/viewport', ["exports", "module", "react"], function (exports, mod
 
     Viewport.prototype.updateDimensions = function updateDimensions() {
       this.setState({ containerWidth: window.innerWidth, containerHeight: window.innerHeight });
-
-      console.log(this.state);
     };
 
     Viewport.prototype.componentWillMount = function componentWillMount() {
@@ -313,6 +311,7 @@ define('moirai/viewport', ["exports", "module", "react"], function (exports, mod
 
     Viewport.prototype.render = function render() {
       var autoSize = false;
+      var scaleFactor = 1;
 
       switch (this.props.mode) {
         case "scaleToFit":
@@ -343,8 +342,6 @@ define('moirai/viewport', ["exports", "module", "react"], function (exports, mod
         width = "100%";
         height = "100%";
       }
-
-      var scaleFactor = 1;
 
       var transform = "scale(" + scaleFactor + ", " + scaleFactor + ")";
 

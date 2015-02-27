@@ -9,8 +9,6 @@ var scaleHeightToFit = function() {
     scaleFactor = this.state.containerHeight / height;
   }
   
-  console.log('scaleFactor', scaleFactor);
-
   return scaleFactor;
 };
 
@@ -37,8 +35,6 @@ class Viewport extends React.Component {
 
   updateDimensions() {
     this.setState({containerWidth: window.innerWidth, containerHeight: window.innerHeight});
-    
-    console.log(this.state);
   }
 
   componentWillMount() {
@@ -55,6 +51,7 @@ class Viewport extends React.Component {
 
   render() {
     var autoSize = false;
+    var scaleFactor = 1.0;
     
     switch (this.props.mode) {
       case 'scaleToFit': {
@@ -82,8 +79,6 @@ class Viewport extends React.Component {
       width = '100%';
       height = '100%';
     }
-    
-    var scaleFactor = 1.0;
     
     var transform = `scale(${scaleFactor}, ${scaleFactor})`;
 
