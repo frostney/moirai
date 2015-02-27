@@ -1,5 +1,33 @@
 "use strict";
 
+define('moirai/asset', ["exports", "module", "react"], function (exports, module, _react) {
+  var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
+
+  var _inherits = function (subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; };
+
+  var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } };
+
+  var React = _interopRequire(_react);
+
+  var Asset = (function (_React$Component) {
+    function Asset() {
+      _classCallCheck(this, Asset);
+
+      if (_React$Component != null) {
+        _React$Component.apply(this, arguments);
+      }
+    }
+
+    _inherits(Asset, _React$Component);
+
+    return Asset;
+  })(React.Component);
+
+  module.exports = Asset;
+});
+
+"use strict";
+
 define('moirai/behavior', ["exports", "module", "react"], function (exports, module, _react) {
   var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
 
@@ -63,7 +91,7 @@ define('moirai/game', ["exports", "react", "moirai/viewport", "moirai/scenedirec
     Game.prototype.render = function render() {
       return React.createElement(
         Viewport,
-        { width: "auto", height: "auto" },
+        null,
         React.createElement(
           SceneDirector,
           null,
@@ -229,9 +257,7 @@ define('moirai/viewport', ["exports", "module", "react"], function (exports, mod
 
   var scaleHeightToFit = function scaleHeightToFit() {
     var scaleFactor = 1;
-    var height = parseInt(this.props.height, 10);
-
-    console.log("height", height);
+    var height = this.props.height;
 
     if (height > this.state.containerHeight) {
       scaleFactor = this.state.containerHeight / height;
@@ -244,7 +270,7 @@ define('moirai/viewport', ["exports", "module", "react"], function (exports, mod
 
   var scaleWidthToFit = function scaleWidthToFit() {
     var scaleFactor = 1;
-    var width = parseInt(this.props.width, 10);
+    var width = this.props.width;
 
     if (width > this.state.containerWidth) {
       scaleFactor = this.state.containerHeight / width;
@@ -286,39 +312,39 @@ define('moirai/viewport', ["exports", "module", "react"], function (exports, mod
     };
 
     Viewport.prototype.render = function render() {
-      var width = this.props.width === "auto" ? "100%" : this.props.width + "px";
-      var height = this.props.height === "auto" ? "100%" : this.props.height + "px";
+      var autoSize = false;
 
-      var autoSize = this.props.width === "auto" && this.props.height === "auto";
+      switch (this.props.mode) {
+        case "scaleToFit":
+          {
+            scaleFactor = Math.min(scaleWidthToFit.call(this), scaleHeightToFit.call(this));
+            break;
+          }
+        case "scaleWidthToFit":
+          {
+            scaleFactor = scaleWidthToFit.call(this);
+            break;
+          }
+        case "scaleHeightToFit":
+          {
+            scaleFactor = scaleHeightToFit.call(this);
+            break;
+          }
+        case "fill":
+          autoSize = true;
+        default:
+          break;
+      }
+
+      var width = this.props.width + "px";
+      var height = this.props.height + "px";
+
+      if (autoSize) {
+        width = "100%";
+        height = "100%";
+      }
 
       var scaleFactor = 1;
-
-      if (!autoSize) {
-        console.log("No auto size");
-
-        switch (this.props.mode) {
-          case "scaleToFit":
-            {
-              scaleFactor = Math.min(scaleWidthToFit.call(this), scaleHeightToFit.call(this));
-
-              console.log("scaleFactor", scaleFactor);
-
-              break;
-            }
-          case "scaleWidthToFit":
-            {
-              scaleFactor = scaleWidthToFit.call(this);
-              break;
-            }
-          case "scaleHeightToFit":
-            {
-              scaleFactor = scaleHeightToFit.call(this);
-              break;
-            }
-          default:
-            break;
-        }
-      }
 
       var transform = "scale(" + scaleFactor + ", " + scaleFactor + ")";
 
@@ -344,10 +370,17 @@ define('moirai/viewport', ["exports", "module", "react"], function (exports, mod
   })(React.Component);
 
   Viewport.defaultProps = {
-    width: "auto",
-    height: "auto",
+    width: 800,
+    height: 480,
     mode: "scaleToFit",
     center: true
+  };
+
+  Viewport.propTypes = {
+    width: React.PropTypes.number,
+    height: React.PropTypes.number,
+    mode: React.PropTypes.string,
+    center: React.PropTypes.bool
   };
 
   module.exports = Viewport;
