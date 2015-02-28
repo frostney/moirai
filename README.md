@@ -3,6 +3,23 @@ React.js game engine. Exciting, experimental and unstable
 
 `moirai` borrows a lot of ideas from [Lyria](http://github.com/freezedev/lyria).
 
+## What does it look like?
+
+Let's create a game:
+```javascript
+import {Game} from 'moirai';
+
+new Game(
+  <Viewport>
+    <SceneDirector>
+      <Scene>
+        <GameObject type="image" asset="hero.png" position="10, 10" />
+      </Scene>
+    </SceneDirector>
+  </Viewport>
+);
+```
+
 ## Philosophy
 - Thin layer on top of React.js
 - DOM elements right now
