@@ -164,6 +164,24 @@ define('moirai/gameobject', ["exports", "module", "react"], function (exports, m
 
 "use strict";
 
+define('moirai', ["exports", "module", "moirai/game", "moirai/viewport", "moirai/gameobject", "moirai/scene", "moirai/scenedirector"], function (exports, module, _moiraiGame, _moiraiViewport, _moiraiGameobject, _moiraiScene, _moiraiScenedirector) {
+  var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
+
+  var Game = _interopRequire(_moiraiGame);
+
+  var Viewport = _interopRequire(_moiraiViewport);
+
+  var GameObject = _interopRequire(_moiraiGameobject);
+
+  var Scene = _interopRequire(_moiraiScene);
+
+  var SceneDirector = _interopRequire(_moiraiScenedirector);
+
+  module.exports = { Game: Game, Viewport: Viewport, GameObject: GameObject, Scene: Scene, SceneDirector: SceneDirector };
+});
+
+"use strict";
+
 define('moirai/scene', ["exports", "module", "react"], function (exports, module, _react) {
   var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
 
@@ -262,8 +280,6 @@ define('moirai/viewport', ["exports", "module", "react"], function (exports, mod
     if (height > this.state.containerHeight) {
       scaleFactor = this.state.containerHeight / height;
     }
-
-    console.log("scaleFactor", scaleFactor);
 
     return scaleFactor;
   };
