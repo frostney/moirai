@@ -7,7 +7,7 @@ React.js game engine. Exciting, experimental and unstable
 
 Let's create a game:
 ```javascript
-import {Game} from 'moirai';
+import {Game, Viewport, SceneDirector, Scene, GameObject} from 'moirai';
 
 new Game(
   <Viewport>
