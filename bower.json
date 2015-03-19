@@ -13,8 +13,9 @@
     "test",
     "tests"
   ],
+  "main": "dist/amd/moirai.js",
   "dependencies": {
-    "react": "0.13.0-rc1"
+    "react": "~0.13.0"
   },
   "devDependencies": {
     "almond": "~0.3.0"

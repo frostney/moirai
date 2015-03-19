@@ -4,7 +4,7 @@ module.exports =
   compact:
     files: [{
       expand: true
-      cwd: 'dist/'
+      cwd: 'dist/amd'
       src: ['**/*.js']
       dest: 'dist/'
       ext: '.min.js'

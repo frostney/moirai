@@ -1,6 +1,6 @@
-"use strict";
+define('moirai//asset', ["exports", "module", "react"], function (exports, module, _react) {
+  "use strict";
 
-define('moirai/asset', ["exports", "module", "react"], function (exports, module, _react) {
   var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
 
   var _inherits = function (subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; };
@@ -26,9 +26,9 @@ define('moirai/asset', ["exports", "module", "react"], function (exports, module
   module.exports = Asset;
 });
 
-"use strict";
+define('moirai//behavior', ["exports", "module", "react"], function (exports, module, _react) {
+  "use strict";
 
-define('moirai/behavior', ["exports", "module", "react"], function (exports, module, _react) {
   var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
 
   var _inherits = function (subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; };
@@ -58,9 +58,9 @@ define('moirai/behavior', ["exports", "module", "react"], function (exports, mod
   module.exports = Behavior;
 });
 
-"use strict";
+define('moirai//game', ["exports", "react", "moirai/viewport", "moirai/scenedirector", "moirai/scene", "moirai/gameobject"], function (exports, _react, _moiraiViewport, _moiraiScenedirector, _moiraiScene, _moiraiGameobject) {
+  "use strict";
 
-define('moirai/game', ["exports", "react", "moirai/viewport", "moirai/scenedirector", "moirai/scene", "moirai/gameobject"], function (exports, _react, _moiraiViewport, _moiraiScenedirector, _moiraiScene, _moiraiGameobject) {
   var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
 
   var _inherits = function (subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; };
@@ -110,9 +110,9 @@ define('moirai/game', ["exports", "react", "moirai/viewport", "moirai/scenedirec
   React.render(React.createElement(Game, null), document.body);
 });
 
-"use strict";
+define('moirai//gameobject', ["exports", "module", "react"], function (exports, module, _react) {
+  "use strict";
 
-define('moirai/gameobject', ["exports", "module", "react"], function (exports, module, _react) {
   var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
 
   var _inherits = function (subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; };
@@ -162,27 +162,9 @@ define('moirai/gameobject', ["exports", "module", "react"], function (exports, m
   module.exports = GameObject;
 });
 
-"use strict";
+define('moirai//scene', ["exports", "module", "react"], function (exports, module, _react) {
+  "use strict";
 
-define('moirai', ["exports", "module", "moirai/game", "moirai/viewport", "moirai/gameobject", "moirai/scene", "moirai/scenedirector"], function (exports, module, _moiraiGame, _moiraiViewport, _moiraiGameobject, _moiraiScene, _moiraiScenedirector) {
-  var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
-
-  var Game = _interopRequire(_moiraiGame);
-
-  var Viewport = _interopRequire(_moiraiViewport);
-
-  var GameObject = _interopRequire(_moiraiGameobject);
-
-  var Scene = _interopRequire(_moiraiScene);
-
-  var SceneDirector = _interopRequire(_moiraiScenedirector);
-
-  module.exports = { Game: Game, Viewport: Viewport, GameObject: GameObject, Scene: Scene, SceneDirector: SceneDirector };
-});
-
-"use strict";
-
-define('moirai/scene', ["exports", "module", "react"], function (exports, module, _react) {
   var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
 
   var _inherits = function (subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; };
@@ -221,9 +203,9 @@ define('moirai/scene', ["exports", "module", "react"], function (exports, module
   module.exports = Scene;
 });
 
-"use strict";
+define('moirai//scenedirector', ["exports", "module", "react"], function (exports, module, _react) {
+  "use strict";
 
-define('moirai/scenedirector', ["exports", "module", "react"], function (exports, module, _react) {
   var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
 
   var _inherits = function (subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; };
@@ -262,9 +244,9 @@ define('moirai/scenedirector', ["exports", "module", "react"], function (exports
   module.exports = SceneDirector;
 });
 
-"use strict";
+define('moirai//viewport', ["exports", "module", "react"], function (exports, module, _react) {
+  "use strict";
 
-define('moirai/viewport', ["exports", "module", "react"], function (exports, module, _react) {
   var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
 
   var _inherits = function (subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; };
@@ -397,6 +379,24 @@ define('moirai/viewport', ["exports", "module", "react"], function (exports, mod
   };
 
   module.exports = Viewport;
+});
+
+define('moirai//index', ["exports", "module", "moirai/game", "moirai/viewport", "moirai/gameobject", "moirai/scene", "moirai/scenedirector"], function (exports, module, _moiraiGame, _moiraiViewport, _moiraiGameobject, _moiraiScene, _moiraiScenedirector) {
+  "use strict";
+
+  var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
+
+  var Game = _interopRequire(_moiraiGame);
+
+  var Viewport = _interopRequire(_moiraiViewport);
+
+  var GameObject = _interopRequire(_moiraiGameobject);
+
+  var Scene = _interopRequire(_moiraiScene);
+
+  var SceneDirector = _interopRequire(_moiraiScenedirector);
+
+  module.exports = { Game: Game, Viewport: Viewport, GameObject: GameObject, Scene: Scene, SceneDirector: SceneDirector };
 });
 
 //# sourceMappingURL=moirai.js.map

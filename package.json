@@ -2,7 +2,7 @@
   "name": "moirai",
   "version": "0.1.0-alpha1",
   "description": "React.js game engine. Exciting, experimental and unstable",
-  "main": "index.js",
+  "main": "dist/common/index.js",
   "directories": {
     "example": "examples"
   },

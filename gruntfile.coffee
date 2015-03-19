@@ -5,7 +5,7 @@ module.exports = (grunt) ->
   require('load-grunt-config') grunt,
     jitGrunt: true
 
-  grunt.registerTask 'compile', ['clean', 'babel:dist', 'amd_tamer:lib', 'uglify']
+  grunt.registerTask 'compile', ['clean', 'babel', 'amd_tamer:lib', 'uglify']
   
   grunt.registerTask 'examples', ['bowercopy', 'amd_tamer:examples']
   
