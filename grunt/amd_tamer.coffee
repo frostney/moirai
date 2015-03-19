@@ -6,6 +6,7 @@ module.exports =
       namespace: '<%= package.name %>'
       base: 'tmp/'
       footer: '\n//# sourceMappingURL=<%= package.name %>.js.map'
+      processName: (name) -> name.toLowerCase()
     files:
       'dist/<%= package.name %>.js': 'tmp/**/*.js'
   examples:
