@@ -1,5 +1,5 @@
 # moirai
-React.js game engine. Exciting, experimental and unstable
+React.js game engine. Exciting, experimental and unstable.
 
 `moirai` borrows a lot of ideas from [Lyria](http://github.com/freezedev/lyria).
 
