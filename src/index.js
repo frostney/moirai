@@ -1,7 +1,7 @@
-import Game from 'moirai/game';
-import Viewport  from 'moirai/viewport';
-import GameObject from 'moirai/gameobject';
-import Scene from 'moirai/scene';
-import SceneDirector from 'moirai/scenedirector';
+import Game from './Game';
+import Viewport  from './Viewport';
+import GameObject from './GameObject';
+import Scene from './Scene';
+import SceneDirector from './SceneDirector';
 
 export default {Game, Viewport, GameObject, Scene, SceneDirector};
