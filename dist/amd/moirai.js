@@ -253,8 +253,10 @@ define('moirai/viewport', ["exports", "module", "react"], function (exports, mod
   };
 
   var Viewport = (function (_React$Component) {
-    function Viewport() {
+    function Viewport(props) {
       _classCallCheck(this, Viewport);
+
+      _React$Component.call(this, props);
 
       this.state = {
         containerWidth: 0,
