@@ -24,7 +24,9 @@ var scaleWidthToFit = function() {
 };
 
 class Viewport extends React.Component {
-  constructor() {
+  constructor(props) {
+    super(props);
+    
     this.state = {
       containerWidth: 0,
       containerHeight: 0
