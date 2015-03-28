@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Viewport from 'moirai/viewport';
-import SceneDirector from 'moirai/scenedirector'
-import Scene from 'moirai/scene';
-import GameObject from 'moirai/gameobject';
+import Viewport from './Viewport';
+import SceneDirector from './SceneDirector'
+import Scene from './Scene';
+import GameObject from './GameObject';
 
 class Game extends React.Component {
   render() {
