@@ -1,50 +1,26 @@
 "use strict";
 
-var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
+/*import React from 'react';
 
-var _inherits = function (subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; };
+import Viewport from './Viewport';
+import SceneDirector from './SceneDirector'
+import Scene from './Scene';
+import GameObject from './GameObject';
 
-var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } };
-
-var React = _interopRequire(require("react"));
-
-var Viewport = _interopRequire(require("./Viewport"));
-
-var SceneDirector = _interopRequire(require("./SceneDirector"));
-
-var Scene = _interopRequire(require("./Scene"));
-
-var GameObject = _interopRequire(require("./GameObject"));
-
-var Game = (function (_React$Component) {
-  function Game() {
-    _classCallCheck(this, Game);
-
-    if (_React$Component != null) {
-      _React$Component.apply(this, arguments);
-    }
-  }
-
-  _inherits(Game, _React$Component);
-
-  Game.prototype.render = function render() {
-    return React.createElement(
-      Viewport,
-      null,
-      React.createElement(
-        SceneDirector,
-        null,
-        React.createElement(
-          Scene,
-          null,
-          React.createElement(GameObject, { type: "image", asset: "hero.png", position: "10, 10" })
-        )
-      )
+class Game extends React.Component {
+  render() {
+    return (
+      <Viewport>
+        <SceneDirector>
+          <Scene>
+            <GameObject type="image" asset="hero.png" position="10, 10" />
+          </Scene>
+        </SceneDirector>
+      </Viewport>
     );
-  };
+  }
+}
 
-  return Game;
-})(React.Component);
-
-React.render(React.createElement(Game, null), document.body);
+React.render(<Game />, document.body);
+*/
 //# sourceMappingURL=Game.js.map

@@ -58,57 +58,32 @@ define('moirai/behavior', ["exports", "module", "react"], function (exports, mod
   module.exports = Behavior;
 });
 
-define('moirai/game', ["exports", "react", "./Viewport", "./SceneDirector", "./Scene", "./GameObject"], function (exports, _react, _Viewport, _SceneDirector, _Scene, _GameObject) {
+define('moirai/game', ["exports"], function (exports) {
   "use strict";
-
-  var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
-
-  var _inherits = function (subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; };
-
-  var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } };
-
-  var React = _interopRequire(_react);
-
-  var Viewport = _interopRequire(_Viewport);
-
-  var SceneDirector = _interopRequire(_SceneDirector);
-
-  var Scene = _interopRequire(_Scene);
-
-  var GameObject = _interopRequire(_GameObject);
-
-  var Game = (function (_React$Component) {
-    function Game() {
-      _classCallCheck(this, Game);
-
-      if (_React$Component != null) {
-        _React$Component.apply(this, arguments);
-      }
-    }
-
-    _inherits(Game, _React$Component);
-
-    Game.prototype.render = function render() {
-      return React.createElement(
-        Viewport,
-        null,
-        React.createElement(
-          SceneDirector,
-          null,
-          React.createElement(
-            Scene,
-            null,
-            React.createElement(GameObject, { type: "image", asset: "hero.png", position: "10, 10" })
-          )
-        )
-      );
-    };
-
-    return Game;
-  })(React.Component);
-
-  React.render(React.createElement(Game, null), document.body);
 });
+/*import React from 'react';
+
+import Viewport from './Viewport';
+import SceneDirector from './SceneDirector'
+import Scene from './Scene';
+import GameObject from './GameObject';
+
+class Game extends React.Component {
+  render() {
+    return (
+      <Viewport>
+        <SceneDirector>
+          <Scene>
+            <GameObject type="image" asset="hero.png" position="10, 10" />
+          </Scene>
+        </SceneDirector>
+      </Viewport>
+    );
+  }
+}
+
+React.render(<Game />, document.body);
+*/
 
 define('moirai/gameobject', ["exports", "module", "react"], function (exports, module, _react) {
   "use strict";
