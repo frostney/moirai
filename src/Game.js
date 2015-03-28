@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 
 import Viewport from './Viewport';
 import SceneDirector from './SceneDirector'
@@ -20,3 +20,4 @@ class Game extends React.Component {
 }
 
 React.render(<Game />, document.body);
+*/
