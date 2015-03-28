@@ -33,6 +33,6 @@
     "time-grunt": "^1.1.0"
   },
   "dependencies": {
-    "react": "0.13.0-rc1"
+    "react": "~0.13.0"
   }
 }
