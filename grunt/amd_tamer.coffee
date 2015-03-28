@@ -4,7 +4,7 @@ module.exports =
   lib:
     options:
       namespace: '<%= package.name %>'
-      base: 'tmp/amd'
+      base: 'tmp/amd/'
       footer: '\n//# sourceMappingURL=<%= package.name %>.js.map'
       processName: (name) -> name.toLowerCase()
     files:
