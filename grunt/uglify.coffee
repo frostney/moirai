@@ -6,7 +6,7 @@ module.exports =
       expand: true
       cwd: 'dist/amd'
       src: ['**/*.js']
-      dest: 'dist/'
+      dest: 'dist/amd'
       ext: '.min.js'
       extDot: 'last'
     }]
