@@ -8,13 +8,13 @@ var _classCallCheck = function (instance, Constructor) { if (!(instance instance
 
 var React = _interopRequire(require("react"));
 
-var Viewport = _interopRequire(require("moirai/viewport"));
+var Viewport = _interopRequire(require("./Viewport"));
 
-var SceneDirector = _interopRequire(require("moirai/scenedirector"));
+var SceneDirector = _interopRequire(require("./SceneDirector"));
 
-var Scene = _interopRequire(require("moirai/scene"));
+var Scene = _interopRequire(require("./Scene"));
 
-var GameObject = _interopRequire(require("moirai/gameobject"));
+var GameObject = _interopRequire(require("./GameObject"));
 
 var Game = (function (_React$Component) {
   function Game() {

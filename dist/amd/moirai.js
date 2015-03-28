@@ -58,7 +58,7 @@ define('moirai/behavior', ["exports", "module", "react"], function (exports, mod
   module.exports = Behavior;
 });
 
-define('moirai/game', ["exports", "react", "moirai/viewport", "moirai/scenedirector", "moirai/scene", "moirai/gameobject"], function (exports, _react, _moiraiViewport, _moiraiScenedirector, _moiraiScene, _moiraiGameobject) {
+define('moirai/game', ["exports", "react", "./Viewport", "./SceneDirector", "./Scene", "./GameObject"], function (exports, _react, _Viewport, _SceneDirector, _Scene, _GameObject) {
   "use strict";
 
   var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
@@ -69,13 +69,13 @@ define('moirai/game', ["exports", "react", "moirai/viewport", "moirai/scenedirec
 
   var React = _interopRequire(_react);
 
-  var Viewport = _interopRequire(_moiraiViewport);
+  var Viewport = _interopRequire(_Viewport);
 
-  var SceneDirector = _interopRequire(_moiraiScenedirector);
+  var SceneDirector = _interopRequire(_SceneDirector);
 
-  var Scene = _interopRequire(_moiraiScene);
+  var Scene = _interopRequire(_Scene);
 
-  var GameObject = _interopRequire(_moiraiGameobject);
+  var GameObject = _interopRequire(_GameObject);
 
   var Game = (function (_React$Component) {
     function Game() {
