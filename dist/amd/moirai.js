@@ -1,4 +1,4 @@
-define('moirai//asset', ["exports", "module", "react"], function (exports, module, _react) {
+define('moirai/asset', ["exports", "module", "react"], function (exports, module, _react) {
   "use strict";
 
   var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
@@ -26,7 +26,7 @@ define('moirai//asset', ["exports", "module", "react"], function (exports, modul
   module.exports = Asset;
 });
 
-define('moirai//behavior', ["exports", "module", "react"], function (exports, module, _react) {
+define('moirai/behavior', ["exports", "module", "react"], function (exports, module, _react) {
   "use strict";
 
   var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
@@ -58,7 +58,7 @@ define('moirai//behavior', ["exports", "module", "react"], function (exports, mo
   module.exports = Behavior;
 });
 
-define('moirai//game', ["exports", "react", "moirai/viewport", "moirai/scenedirector", "moirai/scene", "moirai/gameobject"], function (exports, _react, _moiraiViewport, _moiraiScenedirector, _moiraiScene, _moiraiGameobject) {
+define('moirai/game', ["exports", "react", "moirai/viewport", "moirai/scenedirector", "moirai/scene", "moirai/gameobject"], function (exports, _react, _moiraiViewport, _moiraiScenedirector, _moiraiScene, _moiraiGameobject) {
   "use strict";
 
   var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
@@ -110,7 +110,7 @@ define('moirai//game', ["exports", "react", "moirai/viewport", "moirai/scenedire
   React.render(React.createElement(Game, null), document.body);
 });
 
-define('moirai//gameobject', ["exports", "module", "react"], function (exports, module, _react) {
+define('moirai/gameobject', ["exports", "module", "react"], function (exports, module, _react) {
   "use strict";
 
   var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
@@ -162,7 +162,7 @@ define('moirai//gameobject', ["exports", "module", "react"], function (exports, 
   module.exports = GameObject;
 });
 
-define('moirai//scene', ["exports", "module", "react"], function (exports, module, _react) {
+define('moirai/scene', ["exports", "module", "react"], function (exports, module, _react) {
   "use strict";
 
   var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
@@ -203,7 +203,7 @@ define('moirai//scene', ["exports", "module", "react"], function (exports, modul
   module.exports = Scene;
 });
 
-define('moirai//scenedirector', ["exports", "module", "react"], function (exports, module, _react) {
+define('moirai/scenedirector', ["exports", "module", "react"], function (exports, module, _react) {
   "use strict";
 
   var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
@@ -244,7 +244,7 @@ define('moirai//scenedirector', ["exports", "module", "react"], function (export
   module.exports = SceneDirector;
 });
 
-define('moirai//viewport', ["exports", "module", "react"], function (exports, module, _react) {
+define('moirai/viewport', ["exports", "module", "react"], function (exports, module, _react) {
   "use strict";
 
   var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
@@ -381,20 +381,20 @@ define('moirai//viewport', ["exports", "module", "react"], function (exports, mo
   module.exports = Viewport;
 });
 
-define('moirai//index', ["exports", "module", "moirai/game", "moirai/viewport", "moirai/gameobject", "moirai/scene", "moirai/scenedirector"], function (exports, module, _moiraiGame, _moiraiViewport, _moiraiGameobject, _moiraiScene, _moiraiScenedirector) {
+define('moirai', ["exports", "module", "./Game", "./Viewport", "./GameObject", "./Scene", "./SceneDirector"], function (exports, module, _Game, _Viewport, _GameObject, _Scene, _SceneDirector) {
   "use strict";
 
   var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
 
-  var Game = _interopRequire(_moiraiGame);
+  var Game = _interopRequire(_Game);
 
-  var Viewport = _interopRequire(_moiraiViewport);
+  var Viewport = _interopRequire(_Viewport);
 
-  var GameObject = _interopRequire(_moiraiGameobject);
+  var GameObject = _interopRequire(_GameObject);
 
-  var Scene = _interopRequire(_moiraiScene);
+  var Scene = _interopRequire(_Scene);
 
-  var SceneDirector = _interopRequire(_moiraiScenedirector);
+  var SceneDirector = _interopRequire(_SceneDirector);
 
   module.exports = { Game: Game, Viewport: Viewport, GameObject: GameObject, Scene: Scene, SceneDirector: SceneDirector };
 });
