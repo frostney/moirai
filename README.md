@@ -1,4 +1,7 @@
 # moirai
+[![Dependency Status](https://david-dm.org/freezedev/moirai.svg)](https://david-dm.org/freezedev/moirai)
+[![devDependency Status](https://david-dm.org/freezedev/moirai/dev-status.svg)](https://david-dm.org/freezedev/moirai#info=devDependencies)
+
 React.js game engine. Exciting, experimental and unstable.
 
 `moirai` borrows a lot of ideas from [Lyria](http://github.com/freezedev/lyria).
