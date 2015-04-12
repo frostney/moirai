@@ -1,13 +1,13 @@
-define('moirai/asset', ["exports", "module", "react"], function (exports, module, _react) {
-  "use strict";
+define('moirai/asset', ['exports', 'module', 'react'], function (exports, module, _react) {
+  'use strict';
 
-  var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
+  var _interopRequire = function (obj) { return obj && obj.__esModule ? obj['default'] : obj; };
 
-  var _inherits = function (subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; };
+  var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } };
 
-  var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } };
+  var _inherits = function (subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; };
 
-  var React = _interopRequire(_react);
+  var _React = _interopRequire(_react);
 
   var Asset = (function (_React$Component) {
     function Asset() {
@@ -21,21 +21,21 @@ define('moirai/asset', ["exports", "module", "react"], function (exports, module
     _inherits(Asset, _React$Component);
 
     return Asset;
-  })(React.Component);
+  })(_React.Component);
 
   module.exports = Asset;
 });
 
-define('moirai/behavior', ["exports", "module", "react"], function (exports, module, _react) {
-  "use strict";
+define('moirai/behavior', ['exports', 'module', 'react'], function (exports, module, _react) {
+  'use strict';
 
-  var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
+  var _interopRequire = function (obj) { return obj && obj.__esModule ? obj['default'] : obj; };
 
-  var _inherits = function (subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; };
+  var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } };
 
-  var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } };
+  var _inherits = function (subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; };
 
-  var React = _interopRequire(_react);
+  var _React = _interopRequire(_react);
 
   var Behavior = (function (_React$Component) {
     function Behavior() {
@@ -53,7 +53,7 @@ define('moirai/behavior', ["exports", "module", "react"], function (exports, mod
     };
 
     return Behavior;
-  })(React.Component);
+  })(_React.Component);
 
   module.exports = Behavior;
 });
@@ -85,16 +85,16 @@ class Game extends React.Component {
 React.render(<Game />, document.body);
 */
 
-define('moirai/gameobject', ["exports", "module", "react"], function (exports, module, _react) {
-  "use strict";
+define('moirai/gameobject', ['exports', 'module', 'react'], function (exports, module, _react) {
+  'use strict';
 
-  var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
+  var _interopRequire = function (obj) { return obj && obj.__esModule ? obj['default'] : obj; };
 
-  var _inherits = function (subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; };
+  var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } };
 
-  var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } };
+  var _inherits = function (subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; };
 
-  var React = _interopRequire(_react);
+  var _React = _interopRequire(_react);
 
   var GameObject = (function (_React$Component) {
     function GameObject() {
@@ -108,45 +108,45 @@ define('moirai/gameobject', ["exports", "module", "react"], function (exports, m
     _inherits(GameObject, _React$Component);
 
     GameObject.prototype.render = function render() {
-      var position = "absolute";
+      var position = 'absolute';
 
       var pos = this.props.position;
-      if (typeof pos === "string") {
-        pos = pos.split(",");
+      if (typeof pos === 'string') {
+        pos = pos.split(',');
       }
 
-      var left = pos[0] + "px";
-      var top = pos[1] + "px";
+      var left = pos[0] + 'px';
+      var top = pos[1] + 'px';
 
       var style = { position: position, left: left, top: top };
 
-      return React.createElement(
-        "div",
-        { className: "gameobject", style: style },
+      return _React.createElement(
+        'div',
+        { className: 'gameobject', style: style },
         this.props.children
       );
     };
 
     return GameObject;
-  })(React.Component);
+  })(_React.Component);
 
   GameObject.defaultProps = {
-    position: "0,0"
+    position: '0,0'
   };
 
   module.exports = GameObject;
 });
 
-define('moirai/scene', ["exports", "module", "react"], function (exports, module, _react) {
-  "use strict";
+define('moirai/scene', ['exports', 'module', 'react'], function (exports, module, _react) {
+  'use strict';
 
-  var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
+  var _interopRequire = function (obj) { return obj && obj.__esModule ? obj['default'] : obj; };
 
-  var _inherits = function (subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; };
+  var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } };
 
-  var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } };
+  var _inherits = function (subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; };
 
-  var React = _interopRequire(_react);
+  var _React = _interopRequire(_react);
 
   var Scene = (function (_React$Component) {
     function Scene() {
@@ -161,33 +161,33 @@ define('moirai/scene', ["exports", "module", "react"], function (exports, module
 
     Scene.prototype.render = function render() {
       var style = {
-        width: "100%",
-        height: "100%"
+        width: '100%',
+        height: '100%'
       };
 
-      return React.createElement(
-        "div",
-        { className: "scene", style: style },
+      return _React.createElement(
+        'div',
+        { className: 'scene', style: style },
         this.props.children
       );
     };
 
     return Scene;
-  })(React.Component);
+  })(_React.Component);
 
   module.exports = Scene;
 });
 
-define('moirai/scenedirector', ["exports", "module", "react"], function (exports, module, _react) {
-  "use strict";
+define('moirai/scenedirector', ['exports', 'module', 'react'], function (exports, module, _react) {
+  'use strict';
 
-  var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
+  var _interopRequire = function (obj) { return obj && obj.__esModule ? obj['default'] : obj; };
 
-  var _inherits = function (subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; };
+  var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } };
 
-  var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } };
+  var _inherits = function (subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; };
 
-  var React = _interopRequire(_react);
+  var _React = _interopRequire(_react);
 
   var SceneDirector = (function (_React$Component) {
     function SceneDirector() {
@@ -202,33 +202,33 @@ define('moirai/scenedirector', ["exports", "module", "react"], function (exports
 
     SceneDirector.prototype.render = function render() {
       var style = {
-        width: "100%",
-        height: "100%"
+        width: '100%',
+        height: '100%'
       };
 
-      return React.createElement(
-        "div",
-        { className: "scene-director", style: style },
+      return _React.createElement(
+        'div',
+        { className: 'scene-director', style: style },
         this.props.children
       );
     };
 
     return SceneDirector;
-  })(React.Component);
+  })(_React.Component);
 
   module.exports = SceneDirector;
 });
 
-define('moirai/viewport', ["exports", "module", "react"], function (exports, module, _react) {
-  "use strict";
+define('moirai/viewport', ['exports', 'module', 'react'], function (exports, module, _react) {
+  'use strict';
 
-  var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
+  var _interopRequire = function (obj) { return obj && obj.__esModule ? obj['default'] : obj; };
 
-  var _inherits = function (subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; };
+  var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } };
 
-  var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } };
+  var _inherits = function (subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; };
 
-  var React = _interopRequire(_react);
+  var _React = _interopRequire(_react);
 
   var scaleHeightToFit = function scaleHeightToFit() {
     var scaleFactor = 1;
@@ -277,11 +277,11 @@ define('moirai/viewport', ["exports", "module", "react"], function (exports, mod
     };
 
     Viewport.prototype.componentDidMount = function componentDidMount() {
-      window.addEventListener("resize", this.updateDimensions);
+      window.addEventListener('resize', this.updateDimensions);
     };
 
     Viewport.prototype.componentWillUnmount = function componentWillUnmount() {
-      window.removeEventListener("resize", this.updateDimensions);
+      window.removeEventListener('resize', this.updateDimensions);
     };
 
     Viewport.prototype.render = function render() {
@@ -289,91 +289,91 @@ define('moirai/viewport', ["exports", "module", "react"], function (exports, mod
       var scaleFactor = 1;
 
       switch (this.props.mode) {
-        case "scaleToFit":
+        case 'scaleToFit':
           {
             scaleFactor = Math.min(scaleWidthToFit.call(this), scaleHeightToFit.call(this));
             break;
           }
-        case "scaleWidthToFit":
+        case 'scaleWidthToFit':
           {
             scaleFactor = scaleWidthToFit.call(this);
             break;
           }
-        case "scaleHeightToFit":
+        case 'scaleHeightToFit':
           {
             scaleFactor = scaleHeightToFit.call(this);
             break;
           }
-        case "fill":
+        case 'fill':
           autoSize = true;
         default:
           break;
       }
 
-      var width = this.props.width + "px";
-      var height = this.props.height + "px";
+      var width = this.props.width + 'px';
+      var height = this.props.height + 'px';
 
       if (autoSize) {
-        width = "100%";
-        height = "100%";
+        width = '100%';
+        height = '100%';
       }
 
-      var transform = "scale(" + scaleFactor + ", " + scaleFactor + ")";
+      var transform = 'scale(' + scaleFactor + ', ' + scaleFactor + ')';
 
-      var position = "absolute";
+      var position = 'absolute';
 
       var style = { position: position, width: width, height: height, transform: transform };
 
       if (!autoSize && this.props.center) {
-        style.left = "50%";
-        style.top = "50%";
-        style.marginLeft = this.props.width / -2 + "px";
-        style.marginTop = this.props.height / -2 + "px";
+        style.left = '50%';
+        style.top = '50%';
+        style.marginLeft = this.props.width / -2 + 'px';
+        style.marginTop = this.props.height / -2 + 'px';
       }
 
-      return React.createElement(
-        "div",
-        { className: "viewport", style: style },
+      return _React.createElement(
+        'div',
+        { className: 'viewport', style: style },
         this.props.children
       );
     };
 
     return Viewport;
-  })(React.Component);
+  })(_React.Component);
 
   Viewport.defaultProps = {
     width: 800,
     height: 480,
-    mode: "scaleToFit",
+    mode: 'scaleToFit',
     center: true
   };
 
   Viewport.propTypes = {
-    width: React.PropTypes.number,
-    height: React.PropTypes.number,
-    mode: React.PropTypes.string,
-    center: React.PropTypes.bool
+    width: _React.PropTypes.number,
+    height: _React.PropTypes.number,
+    mode: _React.PropTypes.string,
+    center: _React.PropTypes.bool
   };
 
   module.exports = Viewport;
 });
 
-define('moirai', ["exports", "module", "./Game", "./Viewport", "./GameObject", "./Scene", "./SceneDirector"], function (exports, module, _Game, _Viewport, _GameObject, _Scene, _SceneDirector) {
-  "use strict";
+define('moirai', ['exports', 'module', './Game', './Viewport', './GameObject', './Scene', './SceneDirector'], function (exports, module, _Game, _Viewport, _GameObject, _Scene, _SceneDirector) {
+  'use strict';
 
-  var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
+  var _interopRequire = function (obj) { return obj && obj.__esModule ? obj['default'] : obj; };
 
-  var Game = _interopRequire(_Game);
+  var _Game2 = _interopRequire(_Game);
 
-  var Viewport = _interopRequire(_Viewport);
+  var _Viewport2 = _interopRequire(_Viewport);
 
-  var GameObject = _interopRequire(_GameObject);
+  var _GameObject2 = _interopRequire(_GameObject);
 
-  var Scene = _interopRequire(_Scene);
+  var _Scene2 = _interopRequire(_Scene);
 
-  var SceneDirector = _interopRequire(_SceneDirector);
+  var _SceneDirector2 = _interopRequire(_SceneDirector);
 
-  module.exports = { Game: Game, Viewport: Viewport, GameObject: GameObject, Scene: Scene, SceneDirector: SceneDirector };
+  module.exports = { Game: _Game2, Viewport: _Viewport2, GameObject: _GameObject2, Scene: _Scene2, SceneDirector: _SceneDirector2 };
 });
 
 //# sourceMappingURL=moirai.js.map

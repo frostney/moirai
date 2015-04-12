@@ -1,12 +1,18 @@
-"use strict";
+'use strict';
 
-var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
+var _interopRequireWildcard = function (obj) { return obj && obj.__esModule ? obj : { 'default': obj }; };
 
-var _inherits = function (subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; };
+var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } };
 
-var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } };
+var _inherits = function (subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; };
 
-var React = _interopRequire(require("react"));
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+var _React = require('react');
+
+var _React2 = _interopRequireWildcard(_React);
 
 var SceneDirector = (function (_React$Component) {
   function SceneDirector() {
@@ -21,19 +27,20 @@ var SceneDirector = (function (_React$Component) {
 
   SceneDirector.prototype.render = function render() {
     var style = {
-      width: "100%",
-      height: "100%"
+      width: '100%',
+      height: '100%'
     };
 
-    return React.createElement(
-      "div",
-      { className: "scene-director", style: style },
+    return _React2['default'].createElement(
+      'div',
+      { className: 'scene-director', style: style },
       this.props.children
     );
   };
 
   return SceneDirector;
-})(React.Component);
+})(_React2['default'].Component);
 
-module.exports = SceneDirector;
+exports['default'] = SceneDirector;
+module.exports = exports['default'];
 //# sourceMappingURL=SceneDirector.js.map
