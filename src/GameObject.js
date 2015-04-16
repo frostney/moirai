@@ -4,13 +4,8 @@ class GameObject extends React.Component {
   render() {
     var position = 'absolute';
     
-    var pos = this.props.position;
-    if (typeof pos === 'string') {
-      pos = pos.split(',');
-    }
-    
-    var left = pos[0] + 'px';
-    var top = pos[1] + 'px';
+    var left = this.props.x;
+    var top = this.props.y;
     
     var style = {position, left, top};
     
