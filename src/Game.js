@@ -21,3 +21,13 @@ class Game extends React.Component {
 
 React.render(<Game />, document.body);
 */
+
+import React from 'react';
+
+class Game extends React.Component {
+  render() {
+    return this.props.children;
+  }
+}
+
+export default Game;
