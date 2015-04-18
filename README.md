@@ -16,7 +16,10 @@ new Game(
   <Viewport>
     <SceneDirector>
       <Scene>
-        <GameObject type="image" asset="hero.png" position="10, 10" />
+        <GameObject x={10} y={10} />
+          <Texture source="hero.png" />
+          <Behavior onUpdate={function(gameObject) { gameObject.x += 5 }} />
+        <GameObject />
       </Scene>
     </SceneDirector>
   </Viewport>
