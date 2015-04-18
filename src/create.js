@@ -15,7 +15,7 @@ const create = function(gameContent) {
       
       React.render(gameContent, element);
     }
-  }
+  };
 };
 
 export default create;
