@@ -1,4 +1,7 @@
 import React from 'react';
+import Events from './Events';
+
+import processChildren from './processChildren';
 
 class GameObject extends React.Component {
   constructor(props) {
@@ -9,10 +12,17 @@ class GameObject extends React.Component {
       y: props.initialY
     };
   }
-  processChildren(children) {
-    
-  }
   render() {
+    var data = processChildren.call(this, this.props.children);
+    
+    if (data.onUpdate && data.onUpdate.length > 0) {
+      Events.on('update', () => {
+        data.onUpdate.forEach(updateCall => {
+          updateCall.call(this, this);
+        });
+      });
+    }
+    
     var position = 'absolute';
 
     var left = this.state.x;
