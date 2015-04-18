@@ -26,6 +26,8 @@ new Game(
 );
 ```
 
+This game engine is heavily inspired by [React Router](http://github.com/rackt/react-router).
+
 ## Philosophy
 - Thin layer on top of React.js
 - DOM elements right now
