@@ -9,7 +9,7 @@ class Texture extends React.Component {
 Texture.propTypes = {
   x: React.PropTypes.number,
   y: React.PropTypes.number,
-  width: React.PropTypes.oneOfType([React.PropTypes.number, React.PropTypes.string])
+  width: React.PropTypes.oneOfType([React.PropTypes.number, React.PropTypes.string]),
   height: React.PropTypes.oneOfType([React.PropTypes.number, React.PropTypes.string])
 };
 
