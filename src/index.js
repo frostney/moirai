@@ -7,4 +7,14 @@ import Texture from './Texture';
 import Behavior from './Behavior'
 import create from './create';
 
-export default {create, Viewport, GameObject, Scene, SceneDirector, Audio, Texture, Behavior};
+var Moirai = create;
+
+Moirai.Viewport = Viewport;
+Moirai.GameObject = GameObject;
+Moirai.Scene = Scene;
+Moirai.SceneDirector = SceneDirector;
+Moirai.Audio = Audio;
+Moirai.Texture = Texture;
+Moirai.Behavior = Behavior;
+
+export default Moirai;
