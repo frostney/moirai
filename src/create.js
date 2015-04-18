@@ -4,7 +4,7 @@ const create = function(gameContent) {
   
   return {
     render: function(element) {
-      if (element = null) {
+      if (element == null) {
         var container = document.createElement('div');
         container.id = 'container';
         
@@ -18,3 +18,4 @@ const create = function(gameContent) {
   }
 };
 
+export default create;
