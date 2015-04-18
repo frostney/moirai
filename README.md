@@ -16,9 +16,9 @@ new Game(
   <Viewport>
     <SceneDirector>
       <Scene>
-        <GameObject x={10} y={10} />
+        <GameObject initialX={10} initialY={10} />
           <Texture source="hero.png" />
-          <Behavior onUpdate={function(gameObject) { gameObject.x += 5 }} />
+          <Behavior onUpdate={function(gameObject) { gameObject.state.x += 5 }} />
         <GameObject />
       </Scene>
     </SceneDirector>
