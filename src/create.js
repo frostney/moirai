@@ -1,4 +1,7 @@
 import React from 'react';
+import {Loop} from 'gamebox';
+
+import Events from './Events';
 
 const create = function(gameContent) {
   
@@ -12,8 +15,17 @@ const create = function(gameContent) {
         
         element = document.getElementById('container');
       }
+
+      // Bind the game loop to the `update` event
+      Loop.on('update', (dt) => {
+        // Deltatime should not be a millisecond value, but a second one.
+        // It should be a value between 0 - 1
+        Events.trigger('update', dt / 1000);
+      });
       
       React.render(gameContent, element);
+      
+      Loop.run();
     }
   };
 };
