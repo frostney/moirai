@@ -8,8 +8,7 @@
   },
   "scripts": {
     "test": "npm run grunt test",
-    "grunt": "grunt",
-    "bower": "bower"
+    "grunt": "grunt"
   },
   "repository": {
     "type": "git",
@@ -22,11 +21,9 @@
   },
   "homepage": "https://github.com/freezedev/moirai",
   "devDependencies": {
-    "bower": "^1.3.12",
     "grunt": "^0.4.5",
     "grunt-amd-tamer": "^0.1.13",
     "grunt-babel": "^5.0.0",
-    "grunt-bowercopy": "^1.2.0",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-uglify": "^0.9.1",
     "load-grunt-config": "^0.17.0",
