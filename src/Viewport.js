@@ -111,10 +111,10 @@ Viewport.defaultProps = {
 };
 
 Viewport.propTypes = {
-  width: React.PropTypes.number,
-  height: React.PropTypes.number,
-  mode: React.PropTypes.string,
-  center: React.PropTypes.bool
+  width: React.PropTypes.number.required,
+  height: React.PropTypes.number.required,
+  mode: React.PropTypes.string.required,
+  center: React.PropTypes.bool.required
 };
 
 export default Viewport;
