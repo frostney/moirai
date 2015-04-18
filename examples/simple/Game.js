@@ -1,9 +1,9 @@
 import React from 'react';
 import Moirai from 'moirai';
 
-const {create, Viewport, SceneDirector, Scene, GameObject, Texture} = Moirai;
+const {Viewport, SceneDirector, Scene, GameObject, Behavior, Texture} = Moirai;
 
-create(
+Moirai(
   <Viewport>
     <SceneDirector>
       <Scene>
