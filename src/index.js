@@ -1,4 +1,3 @@
-import Game from './Game';
 import Viewport  from './Viewport';
 import GameObject from './GameObject';
 import Scene from './Scene';
