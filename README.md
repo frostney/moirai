@@ -10,20 +10,23 @@ React.js game engine. Exciting, experimental and unstable.
 
 Let's create a game:
 ```javascript
-import {Game, Viewport, SceneDirector, Scene, GameObject} from 'moirai';
+import React from 'react';
+import Moirai from 'moirai';
+const {Game, Viewport, SceneDirector, Scene, GameObject} = Moirai;
 
-new Game(
+Moirai(
   <Viewport>
     <SceneDirector>
       <Scene>
         <GameObject initialX={10} initialY={10} />
           <Texture source="hero.png" />
-          <Behavior onUpdate={function(gameObject) { gameObject.state.x += 5 }} />
+          <Behavior 
+            onUpdate={function(dt, gameObject) { gameObject.setState({x: gameObject.state.x += (dt * 10)}); }} />
         <GameObject />
       </Scene>
     </SceneDirector>
   </Viewport>
-);
+).render();
 ```
 
 This game engine is heavily inspired by [React Router](http://github.com/rackt/react-router).
