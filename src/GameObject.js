@@ -13,15 +13,16 @@ class GameObject extends React.Component {
     };
   }
   componentDidMount() {
-    var data = processChildren.call(this, this.props.children);
-
-    if (data.onUpdate && data.onUpdate.length > 0) {
-      Events.on('update', () => {
-        data.onUpdate.forEach(updateCall => {
-          updateCall.call(this, this);
+    processChildren.call(this, this.props.children, data => {
+      if (data.onUpdate && data.onUpdate.length > 0) {
+        // It would be cool if EventMap could do namespaces, which would definitely help a lot
+        Events.on('update', dt => {
+          data.onUpdate.forEach(updateCall => {
+            updateCall.call(this, dt, this);
+          });
         });
-      });
-    }
+      }
+    });
   }
   componentWillUnmount() {
     // TODO: Remove events here

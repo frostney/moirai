@@ -8,8 +8,8 @@ Moirai(
     <SceneDirector>
       <Scene>
         <GameObject>
-          <Texture source="something.png" />
-          <Behavior onUpdate={function(gameObject) { gameObject.setState({x: gameObject.state.x + 1}); }} />
+          <Texture source="http://facebook.github.io/react/img/logo.svg" />
+          <Behavior onUpdate={function(dt, gameObject) { gameObject.setState({x: gameObject.state.x + 1}); }} />
         </GameObject>
       </Scene>
     </SceneDirector>
