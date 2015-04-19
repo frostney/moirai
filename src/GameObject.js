@@ -12,9 +12,9 @@ class GameObject extends React.Component {
       y: props.initialY
     };
   }
-  render() {
+  componentDidMount() {
     var data = processChildren.call(this, this.props.children);
-    
+
     if (data.onUpdate && data.onUpdate.length > 0) {
       Events.on('update', () => {
         data.onUpdate.forEach(updateCall => {
@@ -22,7 +22,11 @@ class GameObject extends React.Component {
         });
       });
     }
-    
+  }
+  componentWillUnmount() {
+    // TODO: Remove events here
+  }
+  render() {
     var position = 'absolute';
 
     var left = this.state.x;
