@@ -85,8 +85,9 @@ class Viewport extends React.Component {
     var transform = `scale(${scaleFactor}, ${scaleFactor})`;
 
     var position = 'absolute';
+    var overflow = 'hidden';
     
-    var style = {position, width, height, transform};
+    var style = {position, overflow, width, height, transform};
     
     if (!autoSize && this.props.center) {
       style.left = '50%';
