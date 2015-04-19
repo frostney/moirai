@@ -9,7 +9,7 @@ Moirai(
       <Scene>
         <GameObject>
           <Texture source="something.png" />
-          <Behavior onUpdate={function(gameObject) { gameObject.setState({x: gameObject.state + 1}); }} />
+          <Behavior onUpdate={function(gameObject) { gameObject.setState({x: gameObject.state.x + 1}); }} />
         </GameObject>
       </Scene>
     </SceneDirector>
