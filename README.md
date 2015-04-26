@@ -14,6 +14,10 @@ import React from 'react';
 import Moirai from 'moirai';
 const {Game, Viewport, SceneDirector, Scene, GameObject} = Moirai;
 
+var updateFn = function(dt, gameObject) {
+  gameObject.setState({x: gameObject.state.x += (dt * 10)});
+};
+
 Moirai(
   <Viewport>
     <SceneDirector>
@@ -21,7 +25,7 @@ Moirai(
         <GameObject initialX={10} initialY={10} />
           <Texture source="hero.png" />
           <Behavior 
-            onUpdate={function(dt, gameObject) { gameObject.setState({x: gameObject.state.x += (dt * 10)}); }} />
+            onUpdate={updateFn} />
         <GameObject />
       </Scene>
     </SceneDirector>
