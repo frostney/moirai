@@ -1,6 +1,6 @@
 {
   "name": "moirai",
-  "version": "0.1.0-alpha6",
+  "version": "0.1.0",
   "description": "React.js game engine. Exciting, experimental and unstable",
   "main": "dist/index.js",
   "directories": {
