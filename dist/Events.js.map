@@ -1,0 +1,1 @@
+{"version":3,"sources":["src/Events.js"],"names":[],"mappings":";;;;;;;;wBAAqB,UAAU;;;;AAE/B,IAAI,UAAU,GAAG,2BAAc,CAAC;;qBAEjB,UAAU","file":"src/Events.js","sourcesContent":["import EventMap from 'eventmap';\n\nvar GameEvents = new EventMap();\n\nexport default GameEvents;\n"]}

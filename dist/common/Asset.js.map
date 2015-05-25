@@ -1,1 +1,0 @@
-{"version":3,"sources":["src/Asset.js"],"names":[],"mappings":";;;;;;;;;;;;qBAAkB,OAAO;;;;IAEnB,KAAK;WAAL,KAAK;0BAAL,KAAK;;;;;;;YAAL,KAAK;;SAAL,KAAK;GAAS,mBAAM,SAAS;;qBAIpB,KAAK","file":"src/Asset.js","sourcesContent":["import React from 'react';\n\nclass Asset extends React.Component {\n  \n}\n\nexport default Asset;\n"]}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["src/Audio.js"],"names":[],"mappings":";;;;;;;;;;;;qBAAkB,OAAO;;;;IAEnB,KAAK;WAAL,KAAK;0BAAL,KAAK;;;;;;;YAAL,KAAK;;SAAL,KAAK;GAAS,mBAAM,SAAS;;qBAIpB,KAAK","file":"src/Audio.js","sourcesContent":["import React from 'react';\n\nclass Audio extends React.Component {\n  \n}\n\nexport default Audio;\n"]}

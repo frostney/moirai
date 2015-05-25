@@ -1,18 +1,18 @@
 'use strict';
 
-var _interopRequireWildcard = function (obj) { return obj && obj.__esModule ? obj : { 'default': obj }; };
-
-var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } };
-
-var _inherits = function (subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; };
-
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
 
-var _React = require('react');
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _React2 = _interopRequireWildcard(_React);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
 
 var scaleHeightToFit = function scaleHeightToFit() {
   var scaleFactor = 1;
@@ -105,8 +105,9 @@ var Viewport = (function (_React$Component) {
     var transform = 'scale(' + scaleFactor + ', ' + scaleFactor + ')';
 
     var position = 'absolute';
+    var overflow = 'hidden';
 
-    var style = { position: position, width: width, height: height, transform: transform };
+    var style = { position: position, overflow: overflow, width: width, height: height, transform: transform };
 
     if (!autoSize && this.props.center) {
       style.left = '50%';
@@ -115,7 +116,7 @@ var Viewport = (function (_React$Component) {
       style.marginTop = this.props.height / -2 + 'px';
     }
 
-    return _React2['default'].createElement(
+    return _react2['default'].createElement(
       'div',
       { className: 'viewport', style: style },
       this.props.children
@@ -123,7 +124,7 @@ var Viewport = (function (_React$Component) {
   };
 
   return Viewport;
-})(_React2['default'].Component);
+})(_react2['default'].Component);
 
 Viewport.defaultProps = {
   width: 800,
@@ -133,10 +134,10 @@ Viewport.defaultProps = {
 };
 
 Viewport.propTypes = {
-  width: _React2['default'].PropTypes.number,
-  height: _React2['default'].PropTypes.number,
-  mode: _React2['default'].PropTypes.string,
-  center: _React2['default'].PropTypes.bool
+  width: _react2['default'].PropTypes.number.isRequired,
+  height: _react2['default'].PropTypes.number.isRequired,
+  mode: _react2['default'].PropTypes.string.isRequired,
+  center: _react2['default'].PropTypes.bool.isRequired
 };
 
 exports['default'] = Viewport;

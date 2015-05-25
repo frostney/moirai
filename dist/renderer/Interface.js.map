@@ -1,0 +1,1 @@
+{"version":3,"sources":["src/renderer/Interface.js"],"names":[],"mappings":";;;;;;;;IAAM,SAAS;WAAT,SAAS;0BAAT,SAAS;;;AAAT,WAAS,WACb,gBAAgB,GAAA,0BAAC,IAAI,EAAE,EAEtB;;SAHG,SAAS;;;qBAMA,SAAS","file":"src/renderer/Interface.js","sourcesContent":["class Interface {\n  renderGameObject(data) {\n    \n  }\n}\n\nexport default Interface;\n"]}
