@@ -18,5 +18,5 @@ module.exports =
       expand: true,
       cwd: 'src',
       src: ['**/*.js'],
-      dest: 'dist/common'
+      dest: 'dist'
     }]
