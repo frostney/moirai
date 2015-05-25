@@ -15,4 +15,8 @@ class SceneDirector extends React.Component {
   }
 }
 
+SceneDirector.defaultProps = {
+  currentScene: ''
+};
+
 export default SceneDirector;
