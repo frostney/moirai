@@ -6,9 +6,8 @@ import Audio from './Audio';
 import Texture from './Texture';
 import Behavior from './Behavior';
 import Events from './Events';
-import create from './create';
 
-var Moirai = create;
+let Moirai = {};
 
 Moirai.Viewport = Viewport;
 Moirai.GameObject = GameObject;
