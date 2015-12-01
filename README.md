@@ -13,7 +13,7 @@ Let's create a game:
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
-import {Viewport, SceneDirector, Scene, GameObject} = Moirai;
+import {Viewport, SceneDirector, Scene, GameObject} from 'moirai';
 
 const updateFn = function(dt, gameObject) {
   gameObject.setState({x: gameObject.state.x += (dt * 10)});
