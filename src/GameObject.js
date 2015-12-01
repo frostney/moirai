@@ -6,7 +6,7 @@ import processChildren from './processChildren';
 class GameObject extends React.Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       x: props.initialX,
       y: props.initialY,
@@ -15,6 +15,7 @@ class GameObject extends React.Component {
       texture: ''
     };
   }
+
   componentDidMount() {
     processChildren.call(this, this.props.children, data => {
       if (data.texture && Object.keys(data.texture).length > 0) {
@@ -24,7 +25,7 @@ class GameObject extends React.Component {
           height: data.texture.originalHeight
         });
       }
-      
+
       if (data.onUpdate && data.onUpdate.length > 0) {
         // It would be cool if EventMap could do namespaces, which would definitely help a lot
         Events.on('update', dt => {
@@ -35,9 +36,11 @@ class GameObject extends React.Component {
       }
     });
   }
+
   componentWillUnmount() {
     // TODO: Remove events here
   }
+
   render() {
     var position = 'absolute';
 
@@ -50,7 +53,7 @@ class GameObject extends React.Component {
       var backgroundImage = `url(${this.state.texture})`;
       var backgroundRepeat = 'no-repeat';
     }
-    
+
     var style = {position, left, top, width, height, backgroundImage, backgroundRepeat};
 
     return (
