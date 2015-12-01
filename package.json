@@ -30,6 +30,7 @@
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-uglify": "^0.9.1",
     "load-grunt-config": "^0.17.0",
+    "react-dom": "^0.14.3",
     "time-grunt": "^1.1.0",
     "webpack": "^1.8.5",
     "webpack-dev-server": "^1.8.0"
@@ -38,6 +39,6 @@
     "es6-promise": "^3.0.2",
     "eventmap": "^1.6.0",
     "gamebox": "^0.2.0",
-    "react": "^0.14.0"
+    "react": "^0.14.3"
   }
 }
