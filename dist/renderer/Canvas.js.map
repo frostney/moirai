@@ -1,1 +1,0 @@
-{"version":3,"sources":["src/renderer/Canvas.js"],"names":[],"mappings":";;;;;AAAA,IAAM,cAAc,GAAG;AACrB,SAAO,EAAE,IAAI;AACb,kBAAgB,EAAA,0BAAC,IAAI,EAAE,EAEtB;CACF,CAAC;;qBAEa,cAAc","file":"src/renderer/Canvas.js","sourcesContent":["const CanvasRenderer = {\n  context: null,\n  renderGameObject(data) {\n    \n  }\n};\n\nexport default CanvasRenderer;\n"]}
