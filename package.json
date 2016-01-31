@@ -23,8 +23,8 @@
   },
   "homepage": "https://github.com/freezedev/moirai",
   "devDependencies": {
-    "babel-core": "^5.1.10",
-    "babel-loader": "^5.0.0",
+    "babel-core": "^6.4.5",
+    "babel-loader": "^6.2.1",
     "babel-preset-es2015-loose-rollup": "^7.0.0",
     "babel-preset-react": "^6.3.13",
     "babel-preset-stage-1": "^6.3.13",
@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "es6-promise": "^3.0.2",
-    "eventmap": "^1.6.0",
+    "eventmap": "^2.1.0",
     "gamebox": "^0.2.0",
     "react": "^0.14.3"
   }
