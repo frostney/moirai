@@ -19,23 +19,19 @@ const updateFn = function(dt, gameObject) {
   gameObject.setState({x: gameObject.state.x += (dt * 10)});
 };
 
-class Game extends Component {
-  render() {
-    return (
-      <Viewport>
-        <SceneDirector>
-          <Scene>
-            <GameObject initialX={10} initialY={10} />
-              <Texture source="hero.png" />
-              <Behavior
-                onUpdate={updateFn} />
-            <GameObject />
-          </Scene>
-        </SceneDirector>
-      </Viewport>
-    );
-  }
-}
+const Game = () => (
+  <Viewport>
+    <SceneDirector>
+      <Scene>
+        <GameObject initialX={10} initialY={10} />
+          <Texture source="hero.png" />
+          <Behavior
+            onUpdate={updateFn} />
+        <GameObject />
+      </Scene>
+    </SceneDirector>
+  </Viewport>
+);
 
 ReactDOM.render(<Game />, document.getElementById('container'));
 ```
