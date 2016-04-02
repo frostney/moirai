@@ -16,6 +16,10 @@
     "type": "git",
     "url": "https://github.com/freezedev/moirai.git"
   },
+  "files": [
+    "dist",
+    "src"
+  ],
   "author": "",
   "license": "(Unlicense OR MIT)",
   "bugs": {
