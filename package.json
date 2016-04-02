@@ -38,6 +38,7 @@
     "es6-promise": "^3.0.2",
     "eventmap": "^2.1.0",
     "gamebox": "^0.2.0",
-    "react": "^0.14.3"
+    "react": "^0.14.3",
+    "react-scenedirector": "^1.1.3"
   }
 }
