@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Scene from './Scene';
+import ReactSceneDirector from 'react-scenedirector';
 
 import {Loop} from 'gamebox';
 import Events from './Events';
@@ -22,35 +22,8 @@ class SceneDirector extends React.Component {
   }
 
   render() {
-    var style = {
-      width: '100%',
-      height: '100%'
-    };
-
-    var currentScene = null;
-
-    if (this.props.currentScene) {
-      React.Children.forEach(this.props.children, child => {
-        if (child.type === Scene) {
-          if (child.props.name === this.props.currentScene) {
-            currentScene = child;
-          }
-        }
-      });
-    } else {
-      currentScene = this.props.children;
-    }
-
-    return (
-      <div className="scene-director" style={style}>
-        {currentScene}
-      </div>
-    );
+    return <ReactSceneDirector {...props} />;
   }
 }
-
-SceneDirector.defaultProps = {
-  currentScene: ''
-};
 
 export default SceneDirector;
