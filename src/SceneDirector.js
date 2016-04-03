@@ -22,7 +22,7 @@ class SceneDirector extends React.Component {
   }
 
   render() {
-    return <ReactSceneDirector {...props} />;
+    return <ReactSceneDirector {...this.props} />;
   }
 }
 
